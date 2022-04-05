@@ -1,0 +1,17 @@
+version: '2.3'
+
+services:
+  http-listener:
+    build: ./http/
+    restart: always
+    ports:
+      - "4444:5000"
+    volumes:
+      - ./http/data:/data
+  tcp-listener:
+    build: ./tcp/
+    restart: always
+    ports:
+      - "1337:5000"
+    volumes:
+      - ./tcp/data:/data
